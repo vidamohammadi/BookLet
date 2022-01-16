@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'Just Call Me';
+    src:url('./fonts/Just\ Call\ Me-PersonalUse.ttf')
+}
+
+body{
+    font-family: 'Just Call Me';
+    margin: 0; 
+    background: rgba(17,37,121,.3)
+}
