@@ -1,0 +1,22 @@
+.btn{
+    font: inherit;
+    margin: 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 88px;
+    }
+
+.logon-form{
+    margin-top: 234px;
+    margin-left: 558px;
+    padding: 10px;
+    background: #111362;
+    color: #fff105;
+}
+
+.modal-btn{
+    background: #fff105;
+    color: #111362;
+    
+}

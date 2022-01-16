@@ -1,0 +1,9 @@
+.input{
+    border: none;
+    font: inherit;
+}
+
+.searchInput{
+    width: 449px !important;
+    height: 50px !important;
+}
