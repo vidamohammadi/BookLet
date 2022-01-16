@@ -1,0 +1,22 @@
+.searchTop{
+    width: 524px ;
+    height: 50px;
+    border: 1px solid #161983;
+    border-radius: 40px;
+    margin: 44px auto;
+    overflow: hidden;
+}
+
+.searchTop img{
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+.searchTop span{
+    height: 55px;
+    width: 70px;
+    background:#fff105;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
