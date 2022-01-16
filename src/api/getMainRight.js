@@ -7,25 +7,37 @@ export const getMainRight = () => [
     {
         id: 1,
         title: "Physics",
+        writer:"Holiday",
         src: one,
-        root: "physics"
+        root: "physics",
+        price: "20",
+        off:"2"
     },
     {
         id: 2,
         title: "Architecture",
+        writer: "Moris Mano",
         src: two,
-        root: "architecture"
+        root: "architecture",
+        price:"30",
+        off:"3"
     },
     {
         id: 3,
         title: "Statistics",
+        writer: "Faramarzi",
         src: three,
-        root: "statistics"
+        root: "statistics",
+        price:"25",
+        off:"10"
     },
     {
         id: 4,
         title: "Religious",
+        writer: "Sobhani",
         src: four,
-        root: "religious"
+        root: "religious",
+        price: "45",
+        off: "8"
     }
 ]

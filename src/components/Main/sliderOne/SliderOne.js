@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import './SliderOne.css'
 import { getSliderOne } from '../../../api/getSliderOne'
+import './SliderOne.css'
 import ItemOne from './ItemOne'
 import LinkOne from './LinkOne'
 

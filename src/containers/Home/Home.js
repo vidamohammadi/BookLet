@@ -6,7 +6,7 @@ import smile from '../../images/smile.png'
 import Navbar from '../../components/Navigation/Navbar/Navbar'
 import MainRight from '../../components/Main/mainRight/MainRight'
 import SliderOne from '../../components/Main/sliderOne/SliderOne'
-
+import SliderTwo from '../../components/Main/sliderTwo/SliderTwo'
 const Home = () => {
     return (
         <div className='main'>
@@ -19,6 +19,7 @@ const Home = () => {
             <div>
                 <MainRight />
                 <SliderOne />
+                <SliderTwo />
             </div>
         </div>
     )
