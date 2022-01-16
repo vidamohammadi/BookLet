@@ -1,0 +1,22 @@
+.nav-item {
+    margin: 0;
+    box-sizing: border-box;
+    display: right;
+    height: 100%;
+    align-items: right;
+}
+
+.nav-item a{
+    color: #fcff16;
+    text-decoration: none;
+    height: 100%;
+    padding: 16px 10px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.nav-item a:hover{
+    background: #fcff16;
+    color: #1e394e;
+    cursor: pointer;
+}
