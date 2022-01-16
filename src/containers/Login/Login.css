@@ -1,0 +1,37 @@
+ form{
+        width: 900px;
+        height: 300px;
+        border: 1px solid #1e394e;
+        margin: 76px auto;
+        border-radius: 270px;
+        background: rgba(255, 241, 5, .5);
+        overflow: hidden;
+        box-shadow: 0 1px 11px #111362;
+        position: relative;
+    }
+.type {
+        position: absolute;
+        top: 80px;
+        right: 257px;
+    }
+.type label {
+        width: 100px;
+        display: inline-block;
+        font-family: Yekan;
+        font-size: 10pt;
+        color: #111362;
+        font: inherit;
+    }
+.type input {
+        width: 320px;
+        height: 36px;
+        border: 1px solid #111362;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 10pt;
+        font-family: Yekan;
+        text-align: left;
+        color: #111362;
+        padding: 0 10px;
+        font: inherit;
+    }
