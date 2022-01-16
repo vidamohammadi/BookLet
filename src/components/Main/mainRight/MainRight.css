@@ -1,0 +1,29 @@
+.main-right{
+    float: right;
+    width: 330px;
+    border: 1px solid #1e394e;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.main-right h4{
+    margin: 0;
+    padding: 15px;
+    background:#fff105;
+    text-align: center;
+    color:#1e394e;
+    font-family: Yekan;
+    font-size: 14pt;
+    font-weight: normal;
+}
+
+.main-right ul{
+    float: right;
+    background:rgba(255,241,5,.3);
+    margin: 0;
+}
+
+.img{
+    background-image: '../../../images/main/1/product3.jpg';
+}
