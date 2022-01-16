@@ -1,0 +1,27 @@
+li{
+    float: right;
+    margin-bottom: 20px;
+}
+.bestselling{
+    cursor: pointer;
+    display: block;
+    margin: 20px 0;
+}
+
+.bestselling p{
+    margin: 20px auto;
+    text-align: center;
+    font-family: yekan;
+    font-size: 10pt;
+    color: #132679;
+    width: 330px;
+}
+
+.bestselling >p:nth-child(3){
+    margin: 0 auto !important;
+    font-size: 9pt;
+}
+
+.bestselling img{
+    margin: 0 87.5px;
+}
