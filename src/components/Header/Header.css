@@ -1,0 +1,43 @@
+header{
+    width: 1270px;
+    margin: 0 auto;
+    width: 1100px;
+    height: 150px;
+    padding: 0 85px;
+    background: #f4ffea;
+    position: relative;
+}
+
+.left{
+    float: left;
+    margin: 10px 0;
+}
+
+.right{
+    float: right;
+}
+
+.login{
+    margin-top: 55px;
+}
+
+.login p{
+    font-size: 10pt;
+    color: #1e394e;
+    float: right;
+    cursor: pointer;
+}
+
+.login img{
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+
+.search {
+    height: 120px;
+    width: 700px;
+}
