@@ -1,0 +1,28 @@
+.images{
+    margin-top: 50px;
+    float: right;
+    width: 876px;
+}
+
+.images .direct-access{
+    display: block;
+    width: 284px;
+    border-radius: 30px;
+    overflow: hidden;
+    float: right;
+    border: 1px solid #1e394e;
+    margin-bottom: 30px;
+    height: 200px;
+    cursor: pointer;
+    background-color: white;
+    text-align: center;
+}
+
+.width{
+    width: 432px !important;
+    height: 331px !important;
+}
+
+.margin{
+    margin-left: 8px !important;
+}
