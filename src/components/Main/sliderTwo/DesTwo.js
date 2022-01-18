@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const DesTwo = (props) => {
     return (
-        <Link className="item" to="product/index/<?= $row['book_id'] ?>">
+        <Link className="item" to={`/details/${props.id}`}>
             <div className="slider2-content-right">
                 <div className="price-info">
                     <div className="price-info-old">
-                        {props.oldPrice}
+                        {props.oldPrice}$
                     </div>
                     <div className="price-info-new">
                         {props.newPrice}$

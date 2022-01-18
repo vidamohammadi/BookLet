@@ -6,7 +6,7 @@ const ItemRight = (props) => {
     return (
         <li>
             <div className="line"></div>
-            <Link to={`/${props.root}`} className="bestselling">
+            <Link to={`/details/${props.id}`} className="bestselling">
                 <img src={props.src} alt="" />
                 <p>{props.title}</p>
             </Link>

@@ -20,8 +20,9 @@ const SliderTwo = (props) => {
                             return (
                                 <ItemTwo
                                     key={item.id}
+                                    id={item.id}
                                     title={item.title}
-                                    click={item.id === props.id+1 ? true : false}
+                                    click={item.id === props.id + 1 ? true : false}
                                     onClick={(id) => props.funHandler(item.id)}
                                 />
                             )
@@ -30,9 +31,10 @@ const SliderTwo = (props) => {
                 </ul>
             </div>
             <div className="slider2-content">
-            <DesTwo
+                <DesTwo
+                    id={slider[props.id].id}
                     oldPrice={slider[props.id].price}
-                    newPrice={slider[props.id].price - ((slider[props.id].off * slider[props.id].price ) / 100 )}
+                    newPrice={slider[props.id].price - ((slider[props.id].off * slider[props.id].price) / 100)}
                     title={slider[props.id].title}
                     writer={slider[props.id].writer}
                     src={slider[props.id].src}
@@ -49,7 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        funHandler: (id) => dispatch({ type: 'CLICKTWO' , id: id}),
+        funHandler: (id) => dispatch({ type: 'CLICKTWO', id: id }),
     }
 
 }
