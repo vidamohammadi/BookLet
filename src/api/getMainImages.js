@@ -7,36 +7,36 @@ import five from "../images/main/mainImages/5.jpg"
 export const getMainImages = () => [
     {
         id: 1,
-        title: "study",
         src: one,
+        root: "books",
         width: true,
         margin: true
     },
     {
         id: 2,
-        title: "change",
         src: two,
+        root: "login",
         width: true,
         margin: false
     },
     {
         id: 3,
-        title: "sale",
         src: three,
+        root: "books",
         width: false,
         margin: true
     },
     {
         id: 4,
-        title: "list",
         src: four,
+        root: "books",
         width: false,
         margin: true
     },
     {
         id: 5,
-        title: "buy",
         src: five,
+        root: "books",
         width: false,
         margin: false
     }

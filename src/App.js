@@ -1,17 +1,24 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Details from './components/Details/Details'
+import Book from './containers/Book/Book'
 import Home from './containers/Home/Home'
 import Login from './containers/Login/Login'
-
+import AllBooks from './containers/AllBooks/AllBooks'
+import Account from './containers/Account/Account'
+import Cart from './containers/Cart/Cart'
+import history from './history';
 
 const App = () => {
   return (
-    <Router>
+    <Router history={history}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/details/:root" element={<Details/>} />
+        <Route path="/account/:route" element={<Account />} />
+        <Route path="/books" element={<AllBooks />} />
+        <Route path="/book/:route" element={<Book />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/:route" element={<Cart />} />
       </Routes>
     </Router>
   )

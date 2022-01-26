@@ -7,6 +7,9 @@ import Navbar from '../../components/Navigation/Navbar/Navbar'
 import MainRight from '../../components/Main/mainRight/MainRight'
 import SliderOne from '../../components/Main/sliderOne/SliderOne'
 import SliderTwo from '../../components/Main/sliderTwo/SliderTwo'
+import MainImages from '../../components/Main/mainImages/MainImages'
+import SliderScroll from '../../components/Main/sliderScroll/SliderScroll'
+
 const Home = () => {
     return (
         <div className='main'>
@@ -20,6 +23,8 @@ const Home = () => {
                 <MainRight />
                 <SliderOne />
                 <SliderTwo />
+                <SliderScroll />
+                <MainImages />
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ header{
 }
 
 .login{
-    margin-top: 55px;
+    margin-top: 25px;
 }
 
 .login p{
@@ -35,6 +35,11 @@ header{
     height: 20px;
     margin-top: 10px;
     margin-right: 4px;
+}
+
+.basket{
+    margin-top: 78px;
+    margin-right: -50px;
 }
 
 .search {

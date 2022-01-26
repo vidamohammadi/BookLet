@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
-import Search from '../Search/Search'
+import shopping from '../../images/shopping-basket.png'
 import logo from '../../images/index.png'
 import login from '../../images/login.png'
 
@@ -20,9 +20,12 @@ const Header = () => {
                         <p>Login</p>
                     </Link>
                 </div>
-                <div className='right search'>
-                    <Search />
+                <div className='right basket'>
+                    <img src={shopping} />
                 </div>
+                {/* <div className='right search'>
+                    <Search />
+                </div> */}
 
             </div>
         </header>
