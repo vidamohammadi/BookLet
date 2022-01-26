@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const DesTwo = (props) => {
     return (
-        <Link className="item" to={`/details/${props.id}`}>
+        <Link className="item" to={`/book/${props.id}`}>
             <div className="slider2-content-right">
                 <div className="price-info">
                     <div className="price-info-old">

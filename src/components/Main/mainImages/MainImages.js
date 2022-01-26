@@ -14,7 +14,7 @@ const MainImages = () => {
                         <DirectAccess
                             key={item.id}
                             src={item.src}
-                            title={item.title}
+                            link={item.root}
                             width={item.width}
                             margin={item.margin}
                         />

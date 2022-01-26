@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DirectAccess = (props) => {
     return (
-        <a className={`direct-access ${props.width ? "width" : ""} ${props.margin ? "margin" : ""}`}>
-            <img src={props.src} title={props.title} />
-        </a>
+        <Link to={`/${props.link}`} className={`direct-access ${props.width ? "width" : ""} ${props.margin ? "margin" : ""}`}>
+            <img src={props.src} />
+        </Link>
     )
 }
 
