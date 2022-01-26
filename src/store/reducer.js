@@ -1,6 +1,13 @@
 const inistialState = {
     sliderOneId: 0,
-    sliderTwoId:0
+    sliderTwoId: 0,
+    sliderTnterval: '',
+    userName: '',
+    password: '',
+    auth: '',
+    purchased: true,
+    startScroll: 0,
+    endScroll: 4
 }
 
 const reducer = (state = inistialState, action) => {
@@ -30,14 +37,67 @@ const reducer = (state = inistialState, action) => {
                 }
             }
         case 'CLICK':
-            return{
+            return {
                 ...state,
                 sliderOneId: action.id - 1
             }
         case 'CLICKTWO':
-            return{
+            return {
                 ...state,
                 sliderTwoId: action.id - 1
+            }
+        case 'TRUE':
+            return {
+                ...state,
+                auth: true
+            }
+        case 'FALSE':
+            return {
+                ...state,
+                auth: false
+            }
+        case 'PURCHASED':
+            return {
+                ...state,
+                purchased: false
+            }
+        case 'USERNAME':
+            return {
+                ...state,
+                userName: action.username
+            }
+        case 'PASSWORD':
+            return {
+                ...state,
+                password: action.password
+            }
+        case 'NEXTSCROLL':
+            if (state.startScroll === 4) {
+                return {
+                    ...state,
+                    startScroll: state.startScroll - 4,
+                    endScroll: state.endScroll - 4
+                }
+            } else {
+                return {
+                    ...state,
+                    startScroll: state.startScroll + 4,
+                    endScroll: state.endScroll + 4
+                }
+            }
+        case 'PREVSCROLL':
+            if (state.startScroll === 0) {
+                return {
+                    ...state,
+                    startScroll: state.startScroll + 4,
+                    endScroll: state.endScroll + 4
+                }
+            } else {
+                return {
+                    ...state,
+                    startScroll: state.startScroll - 4,
+                    endScroll: state.endScroll - 4
+                }
             }
         default:
             return state
