@@ -1,66 +1,74 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import { getMainRight } from '../../api/getMainRight'
-import './Details.css'
-import Header from '../Header/Header'
-import Navbar from '../Navigation/Navbar/Navbar'
-import Wrapper from '../../hoc/Wrapper'
+import { connect } from 'react-redux'
 import shopping from '../../images/shopping-basket.png'
+import './Details.css'
+import Button from '../UI/Button/Button'
+import history from '../../history'
+import { Link } from 'react-router-dom'
 
-const Details = () => {
-    const { root } = useParams()
-    const detail = getMainRight()
-
+const Details = (props) => {
+    const addToCart = () => {
+        history.push(`/cart/${props.id}`)
+    }
     return (
-        <Wrapper>
-            <Header />
-            <Navbar />
-            <div className='detailPage'>
+        <div className='detailPage'>
 
-                <div className="details">
-                    <div className="right">
-                        <img className="dot" src={detail[root - 1].src} />
+            <div className="details">
+                <div className="right">
+                    <img className="dot" src={props.src} />
+                </div>
+                <div className="left">
+                    <div className="tittle">
+                        "{props.title}"
                     </div>
-                    <div className="left">
-                        <div className="tittle">
-                            "{detail[root - 1].title}"
-                        </div>
 
-                        <div className="price">
-                            <span>price : {detail[root - 1].price} $</span>
-                            <span className="discount">
-                                <span className="discount-right" style={{color: "yellow" , lineHeight: "10px"}}>off  </span>
-                                <span className="discount-left">
-                                    {(detail[root - 1].price * detail[root - 1].off) / 100} $
-                                </span>
+                    <div className="price">
+                        <span style={{ textDecoration: "line-through" }}>price : {props.price} $</span>
+                        <span className="discount">
+                            <span className="discount-right" style={{ color: "yellow", lineHeight: "10px" }}>off  </span>
+                            <span className="discount-left">
+                                {(props.price * props.off) / 100} $
                             </span>
+                        </span>
+                    </div>
+
+                    <div className="priceforyou">
+                        <span>price for you : </span>
+                        <span>{props.price - ((props.price * props.off) / 100)} $</span>
+                    </div>
+
+
+                    <div className="addtocart-btn">
+                        <div className="btn-right">
+                            <img src={shopping} />
                         </div>
-
-                        <div className="priceforyou">
-                            <span>price for you : </span>
-                            <span>{detail[root - 1].price - ((detail[root - 1].price * detail[root - 1].off) / 100)} $</span>
-                        </div>
-
-
-                        <div className="addtocart-btn">
-                            <div className="btn-right">
-                                <img src={shopping} />
-                            </div>
-                            <div className="btn-left">
-                                <span onclick="addToBasket('<?=$productInfo['book_id']; ?>')">add to basket</span>
-                            </div>
-                            <script>
-                            </script>
-
-                        </div>
+                        <Link to={`/cart/${props.id}`}>
+                            <Button btnType="btn-left" click={addToCart}>
+                                <span>add to basket</span>
+                            </Button>
+                        </Link>
+                        <script>
+                        </script>
 
                     </div>
 
                 </div>
 
             </div>
-        </Wrapper>
+
+        </div>
     )
 }
 
-export default Details
+const mapStateToProps = (state) => {
+    return {
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: () => dispatch({ type: 'ADDTOCART' })
+    }
+
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Details)
