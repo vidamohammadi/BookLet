@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -10,34 +11,25 @@ import Navbar from '../../components/Navigation/Navbar/Navbar'
 import Modal from '../../components/UI/modal/Modal'
 
 const Login = (props) => {
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
-    const [auth, setAuth] = useState('')
-    const [ show , setShow] = useState(true)
-    const [ purchased, setPurchased ] = useState(true)
 
     const validUser = (index) => {
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then((response) => {
-                userName === response.data[index - 1].username ? setAuth(true) : setAuth(false)
+                props.userName === response.data[index - 1].username ? props.trueHandler() : props.falseHandler()
             })
             .catch((error) => {
                 console.log(error)
             })
     }
 
-    validUser(password)
-
-    const modalCloseHandler = () => {
-        setPurchased(false)
-    }
+    validUser(props.password)
 
     return (
 
         <Wrapper>
             <Modal 
-                show={purchased}
-                modalClose={modalCloseHandler}
+                show={props.purchased}
+                modalClose={props.modalCloseHandler}
             >
                 <p>This login form is using fake api and I am testing call data from api.</p>
                 <p>you can login with :</p>
@@ -57,24 +49,24 @@ const Login = (props) => {
                             <label>User Name</label>
                             <Input 
                                 type="input"
-                                value={userName}
+                                value={props.userName}
                                 placeholder="User Name"
-                                onChange={(event) => setUserName(event.target.value)} />
+                                onChange={(event) => props.setUserName(event.target.value)} />
                         </div>
                         <div className="type" style={{ top: "160px" }}>
                             <label>Password</label>
                             <Input
 
                                 type="input"
-                                value={password}
+                                value={props.password}
                                 placeholder="Password"
-                                onChange={(event) => setPassword(event.target.value)} />
+                                onChange={(event) => props.setPassword(event.target.value)} />
                         </div>
                         {
-                            auth === true ?
+                            props.auth === true ?
 
-                                <Link to={`/${password}`}>
-                                    <Button btnType='logon-form'> Login </Button>
+                                <Link to={`/account/${props.password}`}>
+                                    <Button btnType='logon-form' click={props.clickHandler}> Login </Button>
                                 </Link>
                                 :
                                 <Link to={'/error'}>
@@ -89,4 +81,24 @@ const Login = (props) => {
     )
 }
 
-export default Login
+const mapStateToProps = (state) => {
+    return {
+        userName: state.userName,
+        password: state.password,
+        purchased: state.purchased,
+        auth: state.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        trueHandler: () => dispatch({ type: 'TRUE'}),
+        falseHandler: () => dispatch({ type: 'FALSE'}),
+        modalCloseHandler: () => dispatch({ type: 'PURCHASED'}),
+        setUserName : (username) => dispatch({ type: 'USERNAME' , username: username}),
+        setPassword : (password) => dispatch({ type: 'PASSWORD' , password: password}),
+        clickHandler: (password) => dispatch({type: 'AUTH' , password: password})
+    }
+
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
